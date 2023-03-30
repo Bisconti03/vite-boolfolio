@@ -2,7 +2,7 @@
 <script>
 import { store } from './store';
 
-import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 
 
 
@@ -15,7 +15,7 @@ export default {
     },
     
     components: {
-        AppMain
+        AppHeader
     },
     methods: {
        
@@ -24,7 +24,8 @@ export default {
 </script>
 
 <template>
-  <AppMain/>
+  <AppHeader/>
+  <router-view></router-view>
 </template>
 
 

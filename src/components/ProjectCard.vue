@@ -11,8 +11,10 @@ export default {
     },
 
     props : {
-            name : String,
-            description : String,
+            project: {
+                type: Object
+            }
+            
         },
     created() {
         
@@ -23,11 +25,16 @@ export default {
 <template>
 
   
-   <div class="card" style="width: 18rem;" >
+   <div class="card h-100" style="width: 18rem;" >
                 <div class="card-body">
-                    <h5 class="card-title">{{ name }}</h5>
+                    <h5 class="card-title">{{ project.name }}</h5>
                     
-                    <p class="card-text">{{ description }}</p>
+                    <p class="card-text">{{ project.description }}</p>
+
+                    
+                        <router-link :to="{name: 'projects-show', params: {slug: project.slug} }" class="btn btn-primary">
+                                       Info
+                        </router-link>
                     
                 </div>
             </div>
